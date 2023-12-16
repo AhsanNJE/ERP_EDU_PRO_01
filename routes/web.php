@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\AdminController;
+use App\Http\Controllers\Backend\UserCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,10 +33,28 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 //////////////--------------------AdminController----------------////////////
-
 Route::controller(AdminController::class)->group(function(){
 
     Route::get('admin/dashboard', 'AdminDashboard')->name('admin/dashboard');
+
+});
+
+
+////////////----------------User UserCategoryController -------------////////////
+Route::controller(UserCategoryController::class)->group(function(){
+
+    Route::get('all/usercategory', 'AllUserCategory')->name('all.usercategory');
+    Route::get('add/usercategory', 'AddUserCategory')->name('add.usercategory');
+    Route::post('store/usercategory', 'StoreUserCategory')->name('store.usercategory');
+    Route::get('/status/{id}','Status')->name("status");
+    Route::get('edit/usercategory/{id}', 'EditUserCategory')->name('edit.usercategory');
+    Route::post('update/usercategory', 'UpdateUserCategory')->name('update.usercategory');
+    Route::get('delete/usercategory/{id}', 'DeleteUserCategory')->name('delete.usercategory');
+
+
+
+
+  
 
 });
 

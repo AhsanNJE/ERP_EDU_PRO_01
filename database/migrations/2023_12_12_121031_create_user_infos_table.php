@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('category_id');
             $table->string('password');
             $table->string('confirm_password');
-            $table->boolean('status');
+            $table->string('status')->comment('1 for Active 2 for Incative');
             $table->timestamps();
         });
     }

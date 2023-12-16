@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('user__categories', function (Blueprint $table) {
             $table->id();
             $table->string('category_name');
-            $table->string('category_status');
+            $table->string('status')->comment('1 for Active 2 for Incative');
             $table->timestamps();
         });
     }
