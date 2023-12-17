@@ -38,19 +38,19 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
-                User Info
+                User
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/tables/simple.html" class="nav-link">
+                <a href="{{ route('all.user') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>All User</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/tables/data.html" class="nav-link">
+                <a href="{{ route('add.user') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add User</p>
                 </a>
@@ -70,13 +70,13 @@
               <li class="nav-item">
                 <a href="{{ route('all.usercategory') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>All User Category</p>
+                  <p>All Category</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{ route('add.usercategory') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Add User Category</p>
+                  <p>Add Category</p>
                 </a>
               </li>
             </ul>

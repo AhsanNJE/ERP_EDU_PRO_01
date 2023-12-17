@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\UserCategoryController;
+use App\Http\Controllers\Backend\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,7 +41,7 @@ Route::controller(AdminController::class)->group(function(){
 });
 
 
-////////////----------------User UserCategoryController -------------////////////
+////////////----------------UserCategoryController -------------////////////
 Route::controller(UserCategoryController::class)->group(function(){
 
     Route::get('all/usercategory', 'AllUserCategory')->name('all.usercategory');
@@ -51,10 +52,18 @@ Route::controller(UserCategoryController::class)->group(function(){
     Route::post('update/usercategory', 'UpdateUserCategory')->name('update.usercategory');
     Route::get('delete/usercategory/{id}', 'DeleteUserCategory')->name('delete.usercategory');
 
+});
 
+////////////----------------UserController -------------////////////
+Route::controller(UserController::class)->group(function(){
 
-
-  
+    Route::get('all/user', 'AllUser')->name('all.user');
+    Route::get('add/user', 'AddUser')->name('add.user');
+    Route::post('store/user', 'StoreUser')->name('store.user');
+    Route::get('/status/{id}','Status')->name("status");
+    Route::get('edit/user/{id}', 'EditUser')->name('edit.user');
+    Route::post('update/user', 'UpdateUser')->name('update.user');
+    Route::get('delete/user/{id}', 'DeleteUser')->name('delete.user');
 
 });
 
