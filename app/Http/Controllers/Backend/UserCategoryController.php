@@ -53,7 +53,7 @@ class UserCategoryController extends Controller
         User_Category::findOrFail($cid)->update([
             'category_name' => $request->ucName,
             'status' => $request->ucstatus,
-            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
         ]);
 
          $notification = array(

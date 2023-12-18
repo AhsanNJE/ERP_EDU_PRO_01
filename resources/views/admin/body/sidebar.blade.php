@@ -81,6 +81,31 @@
               </li>
             </ul>
           </li>
+
+          
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>
+                Unit
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('all.unit') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>All Unit</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('add.unit') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Unit</p>
+                </a>
+              </li>
+            </ul>
+          </li>
        
           <li class="nav-header">EXAMPLES</li>
       

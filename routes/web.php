@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\UserCategoryController;
 use App\Http\Controllers\Backend\UserController;
+use App\Http\Controllers\Backend\Inv_UnitController;
 
 /*
 |--------------------------------------------------------------------------
@@ -64,6 +65,19 @@ Route::controller(UserController::class)->group(function(){
     Route::get('edit/user/{id}', 'EditUser')->name('edit.user');
     Route::post('update/user', 'UpdateUser')->name('update.user');
     Route::get('delete/user/{id}', 'DeleteUser')->name('delete.user');
+
+});
+
+////////////----------------Inv_UnitController -------------////////////
+Route::controller(Inv_UnitController::class)->group(function(){
+
+    Route::get('all/unit', 'AllUnit')->name('all.unit');
+    Route::get('add/unit', 'AddUnit')->name('add.unit');
+    Route::post('store/unit', 'StoreUnit')->name('store.unit');
+    Route::get('/status/{id}','Status')->name("status");
+    Route::get('edit/unit/{id}', 'EditUnit')->name('edit.unit');
+    Route::post('update/unit', 'UpdateUnit')->name('update.unit');
+    Route::get('delete/unit/{id}', 'DeleteUnit')->name('delete.unit');
 
 });
 
