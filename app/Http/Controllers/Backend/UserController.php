@@ -99,7 +99,7 @@ class UserController extends Controller
 
     ///////////////////////////////////////// Status Method ///////////////////////////////////////
 
-    public function Status($id)
+    public function UserInfoStatus($id)
     {
         $status = User_info::find($id);
         if($status->status==1){

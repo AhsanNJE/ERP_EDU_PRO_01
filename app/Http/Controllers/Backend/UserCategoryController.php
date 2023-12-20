@@ -81,7 +81,7 @@ class UserCategoryController extends Controller
 
 
     //////////////////////////////// -------Status Method------ ///////////////////////////////
-    public function Status($id)
+    public function UserCategoryStatus($id)
     {
         $status = User_Category::find($id);
         if($status->status==1){

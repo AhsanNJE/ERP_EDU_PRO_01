@@ -79,7 +79,7 @@ class Inv_UnitController extends Controller
     }//End Method
 
         //////////////////////////////// -------Status Method------ ///////////////////////////////
-        public function Status($id)
+        public function UnitStatus($id)
         {
             $status = Inv_Unit::findOrFail($id);
             if($status->status==1){

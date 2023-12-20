@@ -39,9 +39,9 @@
                 <td>{{ $item->category_name }}</td>
                 <td>
               @if($item->status==1)
-              <a href="{{ Route('status',$item->id) }}" class="btn btn-success btn-sm"><i class="fa-solid fa-check"></i>Active</a>
+              <a href="{{ Route('user.category.status',$item->id) }}" class="btn btn-success btn-sm"><i class="fa-solid fa-check"></i>Active</a>
               @else
-                  <a href="{{ Route('status',$item->id) }}" class="btn btn-danger btn-sm">Inactive</a>
+                  <a href="{{ Route('user.category.status',$item->id) }}" class="btn btn-danger btn-sm">Inactive</a>
               @endif
                 </td>
                 <td style="display: none;">

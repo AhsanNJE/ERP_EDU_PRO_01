@@ -12,55 +12,65 @@
                 @csrf 
                 <div class="card-body">
                   
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">User Name:</label>
-                    <input type="text" name="userName" class="form-control"  id="exampleInputEmail1">
+                  <div class="row">
+                    <div class="form-group col-md-4">
+                      <label for="exampleInputEmail1">User Name:</label>
+                      <input type="text" name="userName" class="form-control"  id="exampleInputEmail1">
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label for="exampleInputEmail1">Email:</label>
+                      <input type="email" name="userEmail" class="form-control"  id="exampleInputEmail1">
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label for="exampleInputEmail1">Contact:</label>
+                      <input type="number" name="userContact" class="form-control"  id="exampleInputEmail1">
+                    </div>
                   </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Email:</label>
-                    <input type="email" name="userEmail" class="form-control"  id="exampleInputEmail1">
+
+                  <div class="row">
+                    <div class="form-group col-md-4">
+                      <label for="exampleInputEmail1">Gender:</label>
+                      <select name="userGender" class="form-control" id="exampleInputStatus">
+                          <option value="male">------Select Gender-------</option>
+                          <option value="male">Male</option>
+                          <option value="femail">Femail</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label for="exampleInputAddress">Address:</label>
+                      <input type="text" name="userAddress" class="form-control"  id="exampleInputAddress">
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label for="exampleInputEmail1">Select Category Name:</label>
+                      <select name="cat_id" class="form-control" id="exampleInputStatus">
+                      @foreach($userCategory as $ucat)
+                          <option value="{{ $ucat->id }}">{{ $ucat->category_name }}</option>
+                      @endforeach
+                      </select>
+                    </div>
                   </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Contact:</label>
-                    <input type="number" name="userContact" class="form-control"  id="exampleInputEmail1">
+
+                  <div class="row">
+                    <div class="form-group col-md-6">
+                      <label for="exampleInputEmail1">Password</label>
+                      <input type="password" name="userPassword" class="form-control"  id="exampleInputEmail1">
+                    </div> 
+                    <div class="form-group col-md-6">
+                      <label for="exampleInputEmail1">Confirm_Password</label>
+                      <input type="password" name="userConfirm_Password" class="form-control"  id="exampleInputEmail1">
+                    </div>
                   </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Gender:</label>
-                    <select name="userGender" class="form-control" id="exampleInputStatus">
-                        <option value="male">------Select Gender-------</option>
-                        <option value="male">Male</option>
-                        <option value="femail">Femail</option>
-                    </select>
+          
+                  <div class="row">
+                    <div class="form-group col-md-8">
+                        <label for="exampleInputStatus">Status</label>
+                        <select name="userStatus" class="form-control" id="exampleInputStatus">
+                            <option value="1">------Select Status-------</option>
+                            <option value="1">Active</option>
+                            <option value="2">Inactive</option>
+                        </select>
+                    </div>
                   </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Address:</label>
-                    <input type="text" name="userAddress" class="form-control"  id="exampleInputEmail1">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Select Category Name:</label>
-                    <select name="cat_id" class="form-control" id="exampleInputStatus">
-                    @foreach($userCategory as $ucat)
-                        <option value="{{ $ucat->id }}">{{ $ucat->category_name }}</option>
-                    @endforeach
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Password</label>
-                    <input type="password" name="userPassword" class="form-control"  id="exampleInputEmail1">
-                  </div> 
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Confirm_Password</label>
-                    <input type="password" name="userConfirm_Password" class="form-control"  id="exampleInputEmail1">
-                  </div>
-                
-                  <div class="form-group">
-                    <label for="exampleInputStatus">Status</label>
-                    <select name="userStatus" class="form-control" id="exampleInputStatus">
-                        <option value="1">------Select Status-------</option>
-                        <option value="1">Active</option>
-                        <option value="2">Inactive</option>
-                    </select>
-                </div>
                   
                 </div>
                 <!-- /.card-body -->
