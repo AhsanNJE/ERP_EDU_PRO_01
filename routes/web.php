@@ -6,6 +6,7 @@ use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\UserCategoryController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\Inv_UnitController;
+use App\Http\Controllers\Backend\ProductCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,9 +34,6 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
-
-
-
 
 
 
@@ -98,6 +96,18 @@ Route::controller(Inv_UnitController::class)->group(function(){
     Route::get('edit/unit/{id}', 'EditUnit')->name('edit.unit');
     Route::post('update/unit', 'UpdateUnit')->name('update.unit');
     Route::get('delete/unit/{id}', 'DeleteUnit')->name('delete.unit');
+
+});
+
+////////////----------------ProductCategoryController -------------////////////
+Route::controller(ProductCategoryController::class)->group(function(){
+
+    Route::get('all/product/category', 'AllProductCategory')->name('all.product.category');
+    Route::post('product/category/store', 'ProductCategoryStore')->name('product.category.store');
+    Route::get('product/category/status/{id}','ProductCategoryStatus')->name("product.category.status");
+    Route::get('edit/product/category/{id}', 'EditProductCategory')->name('edit.product.category');
+    Route::post('product/category/update', 'ProductCategoryUpdate')->name('product.category.update');
+    Route::get('delete/product/category/{id}', 'DeleteProductCategory')->name('delete.product.category');
 
 });
 

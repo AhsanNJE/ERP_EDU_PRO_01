@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Admin | Registration Page</title>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
@@ -24,7 +25,7 @@
       <p class="login-box-msg">Register a new membership</p>
 
 
-    <form action="{{ route('admin.register.create') }}" method="post">
+    <form id="myForm" action="{{ route('admin.register.create') }}" method="post">
     @csrf 
 
          <div class="input-group mb-3">
@@ -108,5 +109,57 @@
 <script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('assets/dist/js/adminlte.min.js') }}"></script>
+
+
+<script src="{{ asset('assets/dist/js/validate.min.js') }}"></script>
+<script type="text/javascript">
+    $(document).ready(function (){
+        $('#myForm').validate({
+            rules: {
+              name: {
+                    required : true,
+                }, 
+                email: {
+                    required : true,
+                }, 
+                password: {
+                    required : true,
+                }, 
+                password_confirmation: {
+                    required : true,
+                }, 
+                
+            },
+            messages :{
+              name: {
+                    required : 'Please Enter Register Name',
+                }, 
+                email: {
+                    required : 'Please Enter Register Email',
+                }, 
+                password: {
+                    required : 'Please Enter Password',
+                }, 
+                password_confirmation: {
+                    required : 'Please Enter Confirm_Password',
+                }, 
+
+                 
+            },
+            errorElement : 'span', 
+            errorPlacement: function (error,element) {
+                error.addClass('invalid-feedback');
+                element.closest('.form-group').append(error);
+            },
+            highlight : function(element, errorClass, validClass){
+                $(element).addClass('is-invalid');
+            },
+            unhighlight : function(element, errorClass, validClass){
+                $(element).removeClass('is-invalid');
+            },
+        });
+    });
+    
+</script>
 </body>
 </html>
